@@ -19,7 +19,7 @@ const renderGoodsItem = ({src, alt, link, title, desc, price}) => {
 }
 
 const renderGoodsList = (list = goods) => {
-  let goodsList = list.map(item => renderGoodsItem(item)).join('\n');
+  let goodsList = list.map(renderGoodsItem).join('\n');
   document.querySelector('.features').insertAdjacentHTML('beforeend', goodsList);
 }
 
