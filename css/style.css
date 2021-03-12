@@ -78,8 +78,8 @@ button:focus {
 
 .header .header__cart-circle {
   position: absolute;
-  top: -10px;
-  left: 50px;
+  top: -6px;
+  left: 55px;
   width: 19px;
   height: 19px;
   border-radius: 50%;
@@ -110,7 +110,26 @@ button:focus {
     display: none;
   }
 }
+/*Page*/
+.page {
+  height: 148px;
+  background-color: #F8F3F4;
+}
+
+.page .page__name {
+  text-transform: uppercase;
+  color: #F16D7F;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 59px;
+}
+
 /*Cart*/
+.cart {
+  display: none;
+}
+
 .cart .cart__list {
   width: 100%;
   background: #f8eef0;
@@ -129,6 +148,7 @@ button:focus {
 }
 
 .cart .cart__item:active {
+  position: relative;
   color: #F16D7F;
 }
 
@@ -162,10 +182,15 @@ button:focus {
   font-weight: 300;
 }
 
+.cart__cross-button {
+  position: absolute;
+}
+
 /*Общие для Cart и Featured*/
 .total {
   width: 100%;
   background: #f6dce0;
+  margin-bottom: 30px;
 }
 
 .total__text {
