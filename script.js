@@ -1,9 +1,3 @@
-//* 1. Вынести поиск в отдельный компонент.
-//* 2. Вынести корзину в отдельный компонент.
-//* 3. *Создать компонент с сообщением об ошибке. Компонент должен отображаться, когда не удаётся выполнить запрос к серверу.
-
-const API_URL = './goods.json';
-
 Vue.component('search', {
   template: `<input id="header__search-area" v-model="search" v-on:input="searchHandler">`,
   data() {
@@ -96,6 +90,15 @@ const vue = new Vue({
       good.count = 1; // в будущем можно добавить дропдаун и пользователь будет указывать количество товаров
       good.value = ((good.price*100) * good.count)/100;
       this.total = Math.round(this.total*100 + good.value*100)/100;
+
+      fetch('/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(good)
+      })
+
       this.cart.push(good);
     },
 
@@ -125,10 +128,10 @@ const vue = new Vue({
         }
       }
   
-      xhr.open('GET', API_URL, true);
+      xhr.open('GET', `/data`, true);
       xhr.send();
     },
-  
+
     fetchPromise() {
       return new Promise((resolve, reject) => {
         this.fetch(reject, resolve)
