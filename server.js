@@ -10,7 +10,7 @@ app.listen(3000, () => {
 console.log('server is running on port 3000!');
 });
 
-app.get('/data', (req, res) => {
+app.get('/data', (req, res) => { // получение списка товаров из базы при загрузке страницы
   fs.readFile('./goods.json', 'utf-8', (err, data) => {
     if(err) {
       console.log(err);
@@ -21,7 +21,8 @@ app.get('/data', (req, res) => {
   });
 });
 
-/*app.get('/data', (req, res) => { // другой вариант get-запроса
+// Другой вариант get-запроса
+/*app.get('/data', (req, res) => {
   fs.readFile('./goods.json', 'utf-8', (err, data) => {
     if(!err) {
       res.setHeader('Content-Type', 'Application/json');
@@ -30,8 +31,19 @@ app.get('/data', (req, res) => {
   });
 });*/
 
-app.post('/cart', (req, res) => {
-  fs.readFile('cart.json', 'utf8', (err, data) => {
+app.get('/cart', (req, res) => { // получение списка созданной ранее корзины
+  fs.readFile('./cart.json', 'utf-8', (err, data) => {
+    if(err) {
+      console.log(err);
+      res.send(JSON.stringify(err));
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+app.post('/cart', (req, res) => { // добавление товара в корзину
+  fs.readFile('./cart.json', 'utf8', (err, data) => {
     if (err) {
       console.log(err);
       res.send(JSON.stringify(err));
@@ -40,6 +52,30 @@ app.post('/cart', (req, res) => {
       const item = req.body;
 
       cart.push(item);
+      
+      fs.writeFile('./cart.json', JSON.stringify(cart), (err) => {
+        if (err) {
+          console.log(err);
+          res.send(JSON.stringify(err));
+        } else {
+          res.send();
+        }
+      });
+    }
+  });
+});
+
+app.delete('/cart', (req, res) => { // удаление товара из корзины
+  fs.readFile('./cart.json', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+      res.send(JSON.stringify(err));
+    } else {
+      const cart = JSON.parse(data);
+      const deleteItem = req.body;
+      const index = cart.findIndex((item) => item.id == deleteItem.id);
+
+      cart.splice(index, 1);
       
       fs.writeFile('./cart.json', JSON.stringify(cart), (err) => {
         if (err) {

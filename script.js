@@ -91,7 +91,7 @@ const vue = new Vue({
       good.value = ((good.price*100) * good.count)/100;
       this.total = Math.round(this.total*100 + good.value*100)/100;
 
-      fetch('/cart', {
+      fetch('/cart', { // добавление товара в корзину
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -106,10 +106,19 @@ const vue = new Vue({
       const good = this.cart.find((item) => item.id == e.target.closest('.cart__cross-button').id); // находим товар с нужным нам id (для определения value)
       const index = this.cart.findIndex((item) => item.id == e.target.closest('.cart__cross-button').id); //находим индекс товара в корзине с нужным нам id (для удаления товара)
       this.total = Math.round(this.total*100 - good.value*100)/100;
+
+      fetch('/cart', { // удаление товара из корзины
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(good)
+      })
+
       this.cart.splice(index, 1);
     },
 
-    fetch(error, success) {
+    fetch(error, success) { // получение списка товаров из базы
       let xhr;
   
       if (window.XMLHttpRequest) {
@@ -128,7 +137,7 @@ const vue = new Vue({
         }
       }
   
-      xhr.open('GET', `/data`, true);
+      xhr.open('GET', `/data` , true);
       xhr.send();
     },
 
@@ -139,7 +148,7 @@ const vue = new Vue({
     }
   },
   mounted() {
-    this.fetchPromise()
+    this.fetchPromise() // получаем список товаров из базы при загрузке страницы
       .then(data => {
         this.goods = data;
         this.filteredGoods = data;
@@ -148,5 +157,15 @@ const vue = new Vue({
         this.isError = !this.isError;
         this.err = err;
       });
+
+      fetch('/cart') // получаем список товаров ранее созданной корзины
+      .then(response => response.json())
+      .then(data => {
+        this.cart = data;
+        this.total = this.cart.reduce(function(acc, curr){return acc + curr.value}, 0); // расчет стоимости корзины при перезагрузке страницы
+      })
+      .catch(err => {
+        console.log(err);
+      })
   },
 });
