@@ -97,7 +97,15 @@ const vue = new Vue({
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(good)
-      })
+      });
+
+      fetch('/statsAdd', { // добавление статистики
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(good)
+      });
 
       this.cart.push(good);
     },
@@ -113,7 +121,15 @@ const vue = new Vue({
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(good)
-      })
+      });
+
+      fetch('/statsDelete', { // добавление статистики (об удалении товара)
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(good)
+      });
 
       this.cart.splice(index, 1);
     },

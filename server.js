@@ -88,3 +88,45 @@ app.delete('/cart', (req, res) => { // удаление товара из кор
     }
   });
 });
+
+app.post('/statsAdd', (req, res) => { // добавление статистики (о добавлении товара в корзину)
+  fs.readFile('./stats.txt', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+      res.send(JSON.stringify(err));
+    } else {
+      const stats = req.body;
+      let now = new Date();
+      
+      fs.appendFile('./stats.txt', now + ' Added: ' + stats.title + ', price: '  + stats.price + '\n', (err) => {
+        if (err) {
+          console.log(err);
+          res.send(JSON.stringify(err));
+        } else {
+          res.send();
+        }
+      });
+    }
+  });
+});
+
+app.post('/statsDelete', (req, res) => { // добавление статистики (об удалении товара из корзины)
+  fs.readFile('./stats.txt', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+      res.send(JSON.stringify(err));
+    } else {
+      const stats = req.body;
+      let now = new Date();
+      
+      fs.appendFile('./stats.txt', now + ' Deleted: ' + stats.title + ', price: '  + stats.price + '\n', (err) => {
+        if (err) {
+          console.log(err);
+          res.send(JSON.stringify(err));
+        } else {
+          res.send();
+        }
+      });
+    }
+  });
+});
