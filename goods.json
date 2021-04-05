@@ -1,7 +1,7 @@
 [
   {     
     "id": 1,
-    "src": "img/feature-1.jpg",
+    "src": "../img/feature-1.jpg",
     "alt": "Men's wear",
     "link": "#",
     "title": "ellery xmo capsule",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "src": "img/feature-2.jpg",
+    "src": "../img/feature-2.jpg",
     "alt": "Ladies wear",
     "link": "#",
     "title": "bingo",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "src": "img/feature-3.jpg",
+    "src": "../img/feature-3.jpg",
     "alt": "Men's wear",
     "link": "#",
     "title": "ellery capsule",
