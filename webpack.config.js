@@ -1,12 +1,8 @@
 module.exports = {
   mode: 'development',
-  entry: './src/script',
+  watch: true,
+  entry: './src/script.js',
   output: {
     filename: './build.js'
   },
-  devServer: {
-    contentBase: './dist',
-    open: true,
-    compress: true,
-  }
 };

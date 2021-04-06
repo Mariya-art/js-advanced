@@ -40,3 +40,29 @@ Tue Apr 06 2021 02:03:44 GMT+0300 (Москва, стандартное врем
 Tue Apr 06 2021 02:04:43 GMT+0300 (Москва, стандартное время) Deleted: ellery xmo capsule, price: 52.53
 Tue Apr 06 2021 02:05:31 GMT+0300 (Москва, стандартное время) Added: ellery capsule x, price: 45.1
 Tue Apr 06 2021 02:06:01 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule x, price: 45.1
+Tue Apr 06 2021 13:37:27 GMT+0300 (Москва, стандартное время) Added: ellery capsule, price: 45.1
+Tue Apr 06 2021 13:37:30 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 13:50:29 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule, price: 45.1
+Tue Apr 06 2021 13:50:30 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
+Tue Apr 06 2021 14:07:52 GMT+0300 (Москва, стандартное время) Added: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:07:54 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 14:07:54 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 14:08:02 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
+Tue Apr 06 2021 14:13:07 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
+Tue Apr 06 2021 14:13:08 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:36:47 GMT+0300 (Москва, стандартное время) Added: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:36:58 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 14:37:51 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:37:52 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
+Tue Apr 06 2021 14:45:06 GMT+0300 (Москва, стандартное время) Added: ellery capsule l, price: 45.1
+Tue Apr 06 2021 14:45:08 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 14:45:14 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule l, price: 45.1
+Tue Apr 06 2021 14:45:16 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
+Tue Apr 06 2021 14:46:52 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 14:46:55 GMT+0300 (Москва, стандартное время) Added: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:47:14 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:47:15 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
+Tue Apr 06 2021 14:47:18 GMT+0300 (Москва, стандартное время) Added: bingo, price: 30
+Tue Apr 06 2021 14:47:34 GMT+0300 (Москва, стандартное время) Added: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:47:57 GMT+0300 (Москва, стандартное время) Deleted: ellery capsule, price: 45.1
+Tue Apr 06 2021 14:47:58 GMT+0300 (Москва, стандартное время) Deleted: bingo, price: 30
